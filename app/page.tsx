@@ -1,14 +1,37 @@
-import { Button } from '@/components/ui/button'
-import React from 'react'
+import CompanionCard from "@/components/CompanionCard";
+import CompanionsList from "@/components/CompanionList";
+import Cta from "@/components/CTA";
+import {companions, recentSessions} from "@/constants";
+import {getSubjectColor} from "@/lib/utils";
 
-const Page = () => {
+
+
+
+const Page = async () => {
   return (
-    <>
-      <div className='text-red-500'>Page</div>
-      <Button>
-        Click Me Nigger
-      </Button>
-    </>
+    <main>
+      <h1>Popular Companions</h1>
+
+        <section className="home-section">
+            {companions.map((companion) => (
+                <CompanionCard
+                    key={companion.id}
+                    {...companion}
+                    color={getSubjectColor(companion.subject)}
+                />
+            ))}
+
+        </section>
+
+        <section className="home-section">
+            <CompanionsList
+                title="Recently completed sessions"
+                companions={recentSessions}
+                classNames="w-2/3 max-lg:w-full"
+            />
+            <Cta />
+        </section>
+    </main>
   )
 }
 
