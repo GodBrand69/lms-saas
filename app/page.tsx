@@ -1,19 +1,19 @@
 import CompanionCard from "@/components/CompanionCard";
 import CompanionsList from "@/components/CompanionList";
 import Cta from "@/components/CTA";
-import {companions, recentSessions} from "@/constants";
+import { getAllCompanions, getRecentSessions } from "@/lib/actions/companion.actions";
 import {getSubjectColor} from "@/lib/utils";
 
-
-
-
 const Page = async () => {
+
+  const companions = await getAllCompanions({ limit: 4 });
+  const recentSessions = await getRecentSessions(10);
   return (
     <main>
       <h1>Popular Companions</h1>
 
         <section className="home-section">
-            {companions.map((companion) => (
+            {companions.map((companion: Companion) => (
                 <CompanionCard
                     key={companion.id}
                     {...companion}

@@ -13,8 +13,6 @@ interface CompanionCardProps {
   bookmarked: boolean;
 }
 
-
-
 const CompanionCard = ({
   id,
   name,
@@ -53,10 +51,12 @@ const CompanionCard = ({
         <p className="text-sm">{duration} minutes</p>
       </div>
 
-      <Link href={`/companions/${id}`} className="w-full">
-        <button className="btn-primary w-full justify-center">
-          Launch Lesson
-        </button>
+      <Link
+        href={`/companions/${id}`}
+        className="w-full btn-primary justify-center"
+        prefetch={false}
+      >
+        Launch Lesson
       </Link>
     </article>
   );

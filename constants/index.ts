@@ -72,32 +72,3 @@ export const recentSessions = [
   },
 ];
 
-export const companions = [
-  {
-    id: "123",
-    name: "Neura the Brainy Explorer",
-    topic: "Neural Network of the Brain",
-    subject: "science",
-    duration: 30,
-    color: "#E5D0FF",
-    bookmarked: false,
-  },
-  {
-    id: "456",
-    name: "Countsy the Number Wizard",
-    topic: "Derivatives & Integrals",
-    subject: "maths",
-    duration: 45,
-    color: "#FFDA6E",
-    bookmarked: false,
-  },
-  {
-    id: "789",
-    name: "Verba the Vocabulary Builder",
-    topic: "language",
-    subject: "English Literature",
-    duration: 30,
-    color: "#BDE7FF",
-    bookmarked: false,
-  },
-];
