@@ -3,6 +3,9 @@ import CompanionsList from "@/components/CompanionList";
 import Cta from "@/components/CTA";
 import { getAllCompanions, getRecentSessions } from "@/lib/actions/companion.actions";
 import {getSubjectColor} from "@/lib/utils";
+import { headers } from 'next/headers';
+
+export const dynamic = 'force-dynamic'; // Add this line
 
 const Page = async () => {
 
